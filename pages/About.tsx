@@ -9,7 +9,7 @@ const About: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <RevealText text="关于我们" className="text-5xl md:text-7xl font-bold text-gray-900 mb-6" />
-          <RevealText text="托普斯生命科技 · Tops-Life" className="text-3xl md:text-5xl text-blue-600" />
+          <RevealText text="永爱生命科技 · Tops-Life" className="text-3xl md:text-5xl text-blue-600" />
         </div>
       </section>
 
