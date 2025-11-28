@@ -175,7 +175,7 @@ const Home: React.FC = () => {
             className="text-4xl font-bold text-white mb-16 text-center"
           />
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
-            {['制药行业', '电子行业', '医疗器械行业', '特种纸及油墨行业', '纸制品加工与印刷行业'].map((industry) => (
+            {['制药行业', '医疗软包装行业', '医疗器械行业', '特种纸及油墨行业',].map((industry) => (
               <div
                 key={industry}
                 className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-300 hover:bg-neutral-900"
