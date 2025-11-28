@@ -1,28 +1,22 @@
-好的，我将根据之前的讨论，为您提供一个经过 **TypeScript 类型增强**、**用户体验 (UX) 优化** 和 **代码健壮性改进** 后的完整 `Contact` 组件代码。
-
-主要修改点包括：
-
-1.  **明确的表单状态类型** (`FormStatus`)。
-2.  **根据状态禁用提交按钮**，防止重复提交。
-3.  **动态显示提交按钮文本** 和 **状态信息**。
-4.  **优化了 `catch` 块** 以更好地处理错误。
-5.  **改进了输入框的 `placeholder` 样式**。
-
------
-
-## 完整的优化后的 `Contact.tsx` 组件
-
-```tsx
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 
-// 1. 定义明确的表单状态类型
+// 定义明确的表单状态类型
 type FormStatus = 'idle' | 'sending' | 'success' | 'error' | 'network_error';
+
+// 定义用于渲染的状态消息映射
+const statusMessage: Record<FormStatus, string> = {
+  idle: '',
+  sending: '发送中...',
+  success: '发送成功！我们将尽快回复您。',
+  error: '发送失败，请稍后重试。',
+  network_error: '网络错误，请稍后再试。',
+};
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState<FormStatus>('idle'); // 初始状态设为 'idle'
+  const [status, setStatus] = useState<FormStatus>('idle'); // 初始状态为 'idle'
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -45,29 +39,21 @@ export default function Contact() {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        // 尝试记录服务器返回的非成功状态码
+        // 服务器响应非 2xx 状态码
         console.error("Submission failed with status:", res.status);
         setStatus("error");
       }
     } catch (error: unknown) {
-      // 捕获网络错误等，并记录以便调试
+      // 捕获网络连接或 fetch 错误
       console.error("Network or submission error:", error);
       setStatus("network_error");
     }
   };
 
-  // 根据状态显示不同的中文信息
-  const statusMessage: Record<FormStatus, string> = {
-    idle: '',
-    sending: '发送中...',
-    success: '发送成功！我们将尽快回复您。',
-    error: '发送失败，请稍后重试。',
-    network_error: '网络错误，请稍后再试。',
-  };
-
-  // 渲染中使用的状态文本
+  // 渲染中使用的状态文本和布尔值
   const currentStatusMessage = statusMessage[status];
   const isSending = status === 'sending';
+  const isError = status === 'error' || status === 'network_error';
 
   return (
     <div className="min-h-screen bg-black text-white px-6 py-16">
@@ -132,7 +118,7 @@ export default function Contact() {
             value={formData.name}
             onChange={handleChange}
             required
-            // 改进：添加 placeholder-gray-500 样式
+            // 优化：添加 placeholder-gray-500 以增强可见性
             className="w-full p-3 rounded-xl bg-gray-900 border border-gray-700 focus:border-blue-500 placeholder-gray-500 outline-none transition"
           />
 
@@ -172,10 +158,10 @@ export default function Contact() {
             {isSending ? "发送中..." : "发送信息"}
           </button>
 
-          {/* 状态信息展示 */}
+          {/* 状态信息展示 (优化: 根据状态改变文本颜色) */}
           {status !== 'idle' && (
             <p 
-              className={`text-center ${status === 'error' || status === 'network_error' ? 'text-red-400' : 'text-gray-300'}`}
+              className={`text-center ${isError ? 'text-red-400' : 'text-gray-300'}`}
             >
               {currentStatusMessage}
             </p>
@@ -185,4 +171,3 @@ export default function Contact() {
     </div>
   );
 }
-```
