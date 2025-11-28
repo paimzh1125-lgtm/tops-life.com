@@ -87,7 +87,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <RevealText text="专注于生命科学与高精制造" className="text-lg font-semibold tracking-widest text-blue-600 uppercase mb-4" />
           <RevealText text="永爱生命科技 Tops-Life：您的专业与创新伙伴" className="text-4xl md:text-6xl font-bold text-gray-900 mb-8" />
-          <RevealText text="我们致力于为制药、高端医疗器械、电子及印刷行业提供安全、环保、智能的整体解决方案，涵盖**洁净软包装**、**医用注塑**和**高端新材料**三大核心领域。"
+          <RevealText text="我们致力于为制药、高端医疗器械、电子及印刷行业提供安全、环保、智能的整体解决方案，涵盖洁净软包装、医用注塑和高端新材料三大核心领域。"
             className="text-xl md:text-2xl text-gray-700 max-w-5xl mx-auto leading-relaxed" />
         </div>
       </section>
@@ -147,12 +147,11 @@ const Home: React.FC = () => {
       </section>
 
       {/* CTA Block - 最后的行动召唤 */}
-      <section className="py-28 bg-blue-600 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">与我们共同探索洁净科技的无限可能</h2>
-          <p className="text-xl mb-10 opacity-90">无论是定制化的洁净包装，还是高精度的医用注塑，我们都为您提供最可靠的解决方案。</p>
-          <button className="inline-flex items-center px-10 py-4 text-xl font-semibold bg-white text-blue-600 rounded-full hover:bg-gray-100 transition duration-300 shadow-xl">
-            联系专家团队 <ArrowRight className="w-6 h-6 ml-2" />
+          <h2 className="className="text-4xl md:text-5xl font-bold mb-6">与我们共同探索洁净科技的无限可能</h2>
+          <p className="text-xl mb-10 opacity-90"">无论是定制化的洁净包装，还是高精度的医用注塑，我们都为您提供最可靠的解决方案。</p>
+          <button className="button className="inline-flex items-center px-10 py-4 text-xl font-semibold bg-white text-blue-600 rounded-full hover:bg-sky-100 transition duration-300 shadow-xl"">
+            联系专家团队 <ArrowRight className="w-6 h-6 ml-2">
           </button>
         </div>
       </section>
