@@ -4,17 +4,7 @@
 @tailwind utilities;
 
 @layer base {
-  html,
-  body,
-  #__next,
-  .relative {
-    @apply min-h-screen bg-gradient-to-br from-[#f8faff] via-white to-[#e6f3ff];
-  }
-  
-  body {
-    @apply text-gray-800 antialiased;
+  html, body, #__next {
+    @apply bg-white text-gray-800 antialiased;
   }
 }
-
-/* 可选：更纯净的纯白背景（任选其一） */
-/* @apply bg-white; */
