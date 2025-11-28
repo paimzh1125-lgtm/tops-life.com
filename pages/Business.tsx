@@ -63,7 +63,7 @@ export default function BusinessSection() {
                 y: -12,
                 transition: { duration: 0.3 }
               }}
-              className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl overflow-hidden overflow-hidden border border-gray-100"
+              className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl overflow-hidden border border-gray-100"
             >
               {/* 图片区 */}
               <div className="relative h-64 lg:h-72 overflow-hidden">
@@ -83,7 +83,7 @@ export default function BusinessSection() {
               {/* 内容区 */}
               <div className="p-8 lg:p-10">
                 <p className="text-gray-700 leading-relaxed mb-8 text-lg">
-                  {business.description
+                  {business.description}
                 </p>
 
                 {/* 特性列表 */}
@@ -96,7 +96,7 @@ export default function BusinessSection() {
                   ))}
                 </ul>
 
-                {/* 可选：加一个“了解更多”按钮 */}
+                {/* 了解更多 */}
                 <div className="mt-10">
                   <button className="text-emerald-600 font-semibold group-hover:text-emerald-700 transition-colors flex items-center">
                     了解更多
