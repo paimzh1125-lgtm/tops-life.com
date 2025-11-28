@@ -44,15 +44,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-cyan-400 mt-1 shrink-0" />
-                <span>中国上海市浦东新区<br/>科技大道888号创新园区 A座</span>
+                <span>苏州工业园区方泾路8号群祥工业坊2</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-cyan-400 shrink-0" />
-                <span>+86 21 5555 8888</span>
+                <span>++86-051266185798</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-cyan-400 shrink-0" />
-                <span>contact@novamaterial.com</span>
+                <span>contactTopslife@tops-life.com</span>
               </li>
             </ul>
           </div>
@@ -67,13 +67,13 @@ const Footer: React.FC = () => {
                <div className="bg-neutral-800 h-12 rounded flex items-center justify-center text-xs font-bold text-gray-600 border border-neutral-700">FDA</div>
             </div>
             <p className="mt-4 text-xs text-gray-500">
-              通过 ISO 13485, ISO 11607, ISO 9001 等多项国际认证。
+              通过 ISO 13485, ISO 9001 等多项国际认证。
             </p>
           </div>
         </div>
 
         <div className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-          <p>&copy; 2025 NovaMaterial Enterprise. All rights reserved.</p>
+          <p>&copy; 2025 Tops Life Science. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">隐私政策</a>
             <a href="#" className="hover:text-white transition-colors">使用条款</a>
