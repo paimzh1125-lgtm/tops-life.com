@@ -3,8 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { NAV_ITEMS } from '../constants';
 import { Menu, X } from 'lucide-react';
 
-// 假设图片在 src/assets 下（根据实际路径调整）
-import logo from '../components/logo.png'; // 如果在 public 目录下，可跳过这行
+import logo from '../components/logo.png'; 
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
