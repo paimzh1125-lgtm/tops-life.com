@@ -3,6 +3,9 @@ import { NavLink } from 'react-router-dom';
 import { NAV_ITEMS } from '../constants';
 import { Menu, X } from 'lucide-react';
 
+// 假设图片在 src/assets 下（根据实际路径调整）
+import logo from '../assets/logo.png'; // 如果在 public 目录下，可跳过这行
+
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -24,13 +27,28 @@ const Navigation: React.FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-sm transform rotate-45"></div>
+        {/* Logo - 点击返回首页 */}
+        <NavLink 
+          to="/" 
+          className="flex items-center gap-3 group"
+          aria-label="Top Life - 回到首页"
+        >
+          {/* Logo 图片 */}
+          <div className="relative">
+            <img 
+              src={logo} // 如果在 public 目录下，用 "/logo.png"
+              alt="Top Life Logo"
+              className="w-9 h-9 object-contain transition-transform duration-300 group-hover:scale-110"
+            />
+            {/* 可选：发光动画 */}
+            <div className="absolute inset-0 w-9 h-9 bg-cyan-400 rounded-sm blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+          </div>
+
+          {/* Logo 文字 */}
           <span className="text-2xl font-bold tracking-wider text-white">
-            NOVA<span className="text-cyan-400">MATERIAL</span>
+            Top Life
           </span>
-        </div>
+        </NavLink>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
