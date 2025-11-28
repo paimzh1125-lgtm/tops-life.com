@@ -1,0 +1,12 @@
+// app/page.tsx 或 pages/index.tsx
+import BusinessSection from "@/components/BusinessSection";
+
+export default function Home() {
+  return (
+    <>
+      {/* 其他板块 */}
+      <BusinessSection />
+      {/* 其他板块 */}
+    </>
+  );
+}
